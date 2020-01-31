@@ -71,7 +71,7 @@ Open source tools that we used in this project:
 Contribute today and join the team!
 
 | [<img src="assets/avatars/mrz-img.jpeg" height="50" alt="MrZ" />](https://mrz1818.com/) | [<img src="assets/avatars/satchmo.png" height="50" alt="Satchmo" />](https://github.com/rohenaz) |
-|:---:|:---:|:-:|
+|:---:|:---:|
 | [MrZ](https://mrz1818.com/) | [Satchmo](https://github.com/rohenaz)  |
 
 
@@ -79,7 +79,7 @@ Contribute today and join the team!
 Are you interested in becoming a sponsor of Schema? [Let us know!](https://github.com/bitcoinschema/schema/issues/new/choose)
 
 | [<img src="assets/sponsors/tonicpow.png" height="50" alt="TonicPow" />](https://tonicpow.com/)  | [<img src="assets/sponsors/metalens.png" height="50" alt="MetaLens" />](https://metalens.app/)  | [<img src="assets/sponsors/all-aboard.png" height="50" alt="All Aboard" />](https://allaboardbitcoin.com)  |
-|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|
 | [TonicPow](https://tonicpow.com/)  | [MetaLens](https://metalens.app/)  | [All Aboard](https://allaboardbitcoin.com/)  |
 
 
