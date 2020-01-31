@@ -65,7 +65,7 @@ window.$docsify = {
     function (hook, vm) {
       hook.beforeEach(function (markdown) {
         var url =
-          'https://github.com/tonicpow/schema/edit/master/docs' +
+          'https://github.com/bitcoinschema/schema/edit/master/docs' +
           vm.router.getFile()
         var editButton =
           '<a class="edit-button" href="' +
