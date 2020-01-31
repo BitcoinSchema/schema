@@ -1,0 +1,103 @@
+{
+  "name": "bitcoin-schema",
+  "description": "Community driven extensible schemas that enable developers to create interoperable data based applications.",
+  "homepage": "https://bitcoinschema.org",
+  "version": "0.0.1",
+  "main": "docs/index.html",
+  "bugs": {
+    "url": "https://github.com/bitcoinschema/schema/issues"
+  },
+  "keywords": [
+    "schema",
+    "bitcoin",
+    "bitcoinsv",
+    "bsv"
+  ],
+  "author": {
+    "name": "BitCoinSchema",
+    "email": "suggestions@bitcoinschema.org",
+    "url": "https://bitcoinschema.org"
+  },
+  "contributors": [
+    {
+      "name": "Satchmo",
+      "url": "https://github.com/rohenaz/"
+    },
+    {
+      "name": "MrZ",
+      "url": "https://github.com/mrz1836/"
+    }
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "browser-sync": "latest",
+    "concurrently": "latest",
+    "conventional-github-releaser": "latest",
+    "docsify-cli": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-sass": "latest",
+    "gulp-strip-css-comments": "latest",
+    "gulp-uglify": "latest",
+    "lint-staged": "latest",
+    "npm-check-updates": "latest",
+    "prettier-standard": "latest",
+    "standard": "latest",
+    "standard-markdown": "latest",
+    "standard-version": "latest"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "files": [
+    "docs",
+    "gulpfile.js",
+    "src"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "dev": "concurrently \"gulp\" \"npm run server:dev\"",
+    "lint": "standard-markdown docs/**/*.md",
+    "postrelease": "npm run release:tags && npm run release:github",
+    "prerelease": "npm run update:check",
+    "pretest": "npm run lint",
+    "release": "standard-version -a",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:tags": "git push --follow-tags origin HEAD:master",
+    "server:dev": "cd docs && browser-sync start --server --files \"index.html, **/*.md, app.min.js, styles.min.css\"",
+    "start": "docsify start docs",
+    "test": "echo 'no tests available' && exit 0",
+    "update": "ncu -u",
+    "update:check": "ncu -- --error-level 2"
+  },
+  "private": true,
+  "license": "Open BSV",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitcoinschema/schema/"
+  },
+  "lint-staged": {
+    "package.json": [
+      "finepack",
+      "git add"
+    ],
+    "*.js": [
+      "prettier-standard",
+      "git add"
+    ],
+    "*.md": [
+      "standard-markdown",
+      "git add"
+    ]
+  }
+}
