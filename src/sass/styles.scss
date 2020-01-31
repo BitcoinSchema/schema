@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600');
+@import 'vars';
+
+body {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.markdown-section pre {
+  font-family: Roboto Mono, Monaco, courier, monospace;
+}
+
+.markdown-section pre > code {
+  font-family: Roboto Mono, Monaco, courier, monospace;
+  font-size: 0.8rem;
+}
+
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+}
+
+nav.app-nav li ul {
+  min-width: 100px;
+}
+
+.sidebar li {
+  margin: 0;
+}
+
+.edit-button {
+  text-decoration: none;
+  font-size: 12px;
+  color: $edit-button-color;
+}
+
+.edit-button svg {
+  width: 14px;
+  margin-right: .5rem;
+  top: 2px;
+  position: relative;
+}
