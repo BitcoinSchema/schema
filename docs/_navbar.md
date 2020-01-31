@@ -1,0 +1,3 @@
+- _Languages_
+  - [:uk: English](/)
+  - [:es: Spanish](/es/)
