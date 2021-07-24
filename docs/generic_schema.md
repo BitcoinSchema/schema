@@ -4,7 +4,7 @@ These are generic Schemas that can be used for many use cases.
 
 ### Payment
 
-Payment is used to describe a payment send from one identity to another. It is used by [BPP](https://github.com/icellan/bpp) when creating Content Paywalls.
+Payment is used to describe a payment sent from one identity to another. It is used by [BPP](https://github.com/icellan/bpp) when creating Content Paywalls.
 
 ##### OP_RETURN
 

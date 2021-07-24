@@ -1,8 +1,8 @@
-## Using Schema
+## Examples
 
-## JavaScript Example
+### JavaScript
 
-First, we'll demonstrate creating a new transaction containing some data according to a Bitcoion Schema. For this example, we will create a new "like". This is used to signify you like an existing payload in another transaction.
+First, we'll demonstrate creating a new transaction containing some data according to a Bitcoion Schema. For this example, we will create a new "like". Likes refer to an existing transaction by its transaction ID.
 
 Here, we use RelayOne Javascript API to create the transaction. This is very similar to creating the tx using MoneyButton, and is simplified for demonstration purposes.
 
@@ -51,24 +51,21 @@ payload.outputs = [...payload.outputs.concat(toOuts)];
 let response = await relayOne.send(payload);
 ```
 
-## Go Example
+### Go
 
 A library is available for doing this automatically with Go called [go-bitcoin-schema](https://github.com/bitcoinschema/go-bitcoin-schema). Creating a like is as simple as:
 
 ```go
-package myapp
-
 import "github.com/bitcoinschema/go-bitcoin-schema"
+```
 
-func main() {
-  tx, err := CreateUnlike(unlikeTxID, utxos, changeAddress, privateKey)
-  if err != nil {
-    // handle error
-  }
-
-  // do something with tx...
+```go
+tx, err := CreateUnlike(unlikeTxID, utxos, changeAddress, privateKey)
+if err != nil {
+  // handle error
 }
 
+// do something with tx...
 ```
 
 ## Getting help
