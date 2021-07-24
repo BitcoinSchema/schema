@@ -1,9 +1,9 @@
 # **Bitcoin Schema**
 
-> Structured data for BitCoin applications
+> Data definitions for BitCoin applications
 
-- Integrate with hundreds of applications
-- Gravity network effect
+- Automatically Integrate with other Apps
+- Build Collaborative Networks
 
 [Learn More](#what-is-schema)
 [Browse Schemas](schemas.md)

@@ -1,6 +1,6 @@
 ## What is Schema?
 
-This is a community driven register of models for standard use in applications. Schema.org provides a similar register, but this one is specifically designed with BitCoin enabled applications in mind, combining several data protocols.
+The schemas are a set of 'types', each associated with a set of properties. This is a community driven register of types for standard use in applications. Schema.org provides a similar register, but this one is specifically designed with BitCoin enabled applications in mind, combining several data protocols.
 
 ## What protocols are used?
 
