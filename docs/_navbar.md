@@ -1,3 +1,3 @@
 - _Languages_
-  - [:uk: English](/)
-  - [:es: Spanish](/es/)
+  - [:us: English](/)
+  <!-- - [:es: Spanish](/es/) -->
