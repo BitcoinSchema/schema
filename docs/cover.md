@@ -1,8 +1,8 @@
 # **Bitcoin Schema**
 
-> Data definitions for BitCoin applications
+> Data definitions for Bitcoin applications
 
-- Automatically Integrate with other Apps
+- Unlock Limitless Interoperability
 - Build Collaborative Networks
 
 [Learn More](#what-is-schema)
