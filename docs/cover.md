@@ -1,4 +1,4 @@
-# **Schema**
+# **Bitcoin Schema**
 
 > Structured data for BitCoin applications
 
