@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      # Install yarn
+      - yum -y install yarn
+
+      # Install firebase tools
+      - yarn global add firebase-tools
+
+  pre_build:
+    commands:
+      # Install all root dependencies
+      - make install
+
+  post_build:
+    commands:
+      # Deploy the firebase application using project & CI Token
+      - make firebase-deploy-simple project=$FIREBASE_PROJECT token=$(make decrypt-deprecated decrypt_value=$FIREBASE_TOKEN)

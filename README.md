@@ -52,6 +52,150 @@ Visit [our live documentation](https://bitcoinschema.org) site.
 
 <br />
 
+### Deployment & Hosting
+This repository has CI integration using [AWS CodePipeline](https://aws.amazon.com/codepipeline/).
+
+The build in AWS will deploy to [firebase](https://firebase.google.com).
+
+The actual build process can be found in the [buildspec.yml](buildspec.yml) file.
+
+The application relies on [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
+and [AWS SSM](https://aws.amazon.com/systems-manager/features/) to store environment variables.
+Sensitive environment variables are encrypted using [AWS KMS](https://aws.amazon.com/kms/) and then decrypted at runtime.
+
+Deploy different environments by changing the `<stage>` to `production` or `development` as example.
+The default stage is `production` if it's not specified.
+
+<details>
+<summary><strong><code>Firebase Hosting Setup</code></strong></summary>
+<br/>
+
+1) Start a new project and assign a CNAME
+2) Make sure the region is us-central
+3) Generate a CI `firebase_token` using the command: `firebase login:ci`
+</details>
+
+<details>
+<summary><strong><code>Create Environment Encryption Key(s) (AWS)</code></strong></summary>
+<br/>
+
+Create a `KMS Key` per `<stage>` for your application(s) to encrypt environment variables
+```shell script
+make create-env-key stage="<stage>"
+```
+
+This will also store the `kms_key_id` in  [SSM](https://aws.amazon.com/systems-manager/features/) located at: `/<application>/<stage>/kms_key_id`
+
+</details>
+
+<details>
+<summary><strong><code>Manage Environment Variables (AWS)</code></strong></summary>
+<br/>
+
+- `app_id` is the Firebase application id for the [project](https://firebase.google.com/docs/projects/learn-more)
+- `project` is the [Firebase project_id](https://firebase.google.com/docs/projects/learn-more)
+- `sender_id` is the Firebase sender_id for the [project](https://firebase.google.com/docs/projects/learn-more)
+
+Add or update your project information _(all parameters are required)_
+```shell script
+make firebase-save-project \
+      app_id="YOUR_APP_ID" \
+      project="YOUR_PROJECT_ID" \
+      sender_id="YOUR_SENDER_ID" \
+      stage="<stage>";
+```
+</details>
+
+<details>
+<summary><strong><code>Manage Environment Secrets (AWS)</code></strong></summary>
+<br/>
+
+- `firebase_api_key` is found in the Firebase console for that specific project
+- `firebase_token` is the `ci:login` token that is generated from `firebase login:ci`
+- `github_token` is a personal token with access to make a webhook
+- `kms_key_id` is from the previous step (Create Environment Encryption Keys)
+
+Add or update your secrets _(all parameters are required)_
+```shell script
+make save-secrets \
+      firebase_api_key="YOUR_FIREBASE_API_KEY" \
+      firebase_token="YOUR_FIREBASE_CI_TOKEN" \
+      github_token="YOUR_GITHUB_TOKEN" \
+      kms_key_id="YOUR_KMS_KEY_ID" \
+      stage="<stage>";
+```
+</details>
+
+<details>
+<summary><strong><code>Create CI Environment (AWS)</code></strong></summary>
+<br/>
+
+<img src=".github/IMAGES/infrastructure-diagram.png" alt="infrastructure diagram" height="450" />
+
+**Prerequisites**
+- [An AWS account](https://aws.amazon.com/)
+    - _Deploying_ requires permission to: [KMS](https://aws.amazon.com/kms/), [SSM](https://aws.amazon.com/systems-manager/features/), [Secrets Manager](https://aws.amazon.com/secrets-manager/) and [Cloud Formation](https://aws.amazon.com/cloudformation/)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)  _(`brew install awscli`)_
+- [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-mac.html) _(`brew tap aws/tap && brew install aws-sam-cli`)_
+
+This will create a new [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack with:
+- (1) [CodePipeline](https://aws.amazon.com/codepipeline/) with multiple stages to deploy the application from Github
+- (1) [CodePipeline Webhook](https://aws.amazon.com/codepipeline/) to receive Github notifications from a specific `branch:name`
+- (1) [CodeBuild Project](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project.html) to build and deploy the app
+- (2) [Service Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) for working with CodeBuild and CodePipeline
+
+**NOTE:** Requires an existing S3 bucket for artifacts and sam-cli deployments (located in the [Makefile](Makefile))
+
+One command will build, test, package and deploy the application to AWS.
+After initial deployment, updating is as simple as committing to Github.
+```shell script
+make deploy
+``` 
+
+_(Example)_ Customized deployment for another stage
+```shell script
+make deploy stage="development" branch="development"
+``` 
+
+_(Example)_ Customized deployment for a feature branch
+```shell script
+make deploy stage="development" branch="some-feature" feature="some-feature"
+```
+
+_(Example)_ Customized S3 bucket location
+```shell script
+make deploy bucket="some-S3-bucket-location"
+```
+
+_(Example)_ Customized tags for the deployment
+```shell script
+make deploy tags="MyTag=some-value AnotherTag=some-value"
+```  
+</details>
+
+<details>
+<summary><strong><code>Tear Down CI Environment (AWS)</code></strong></summary>
+<br/>
+
+Remove the stack (using default stage: `production`)
+```shell script
+make teardown
+```   
+
+_(Example)_ Teardown another stack via stage
+```shell script
+make teardown stage="development"
+``` 
+
+_(Example)_ Teardown a feature/branch stack
+```shell script
+make teardown stage="development" feature="some-feature"
+```   
+</details>
+
+<br/>
+
+
 ## Examples
 Websites or applications using Schema:
 - [map.sv](https://map.sv/?utm_source=github&utm_medium=sponsor-link&utm_campaign=schema&utm_term=schema&utm_content=schema)
