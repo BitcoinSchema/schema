@@ -4,7 +4,7 @@ The schemas are a set of 'types', each associated with a set of properties. This
 
 ## What protocols are used?
 
-The protocols used in the models registered here are currently [B](https://github.com/unwriter/b), [MAP](https://github.com/rohenaz/map), [AIP](https://github.com/attilaaf/AUTHOR_IDENTITY_PROTOCOL), [BAP](https://github.com/icellan/bap) and [BPP]()
+The protocols used in the models registered here are currently [B](https://github.com/unwriter/b), [MAP](https://github.com/rohenaz/map), [AIP](https://github.com/attilaaf/AUTHOR_IDENTITY_PROTOCOL), [BAP](https://github.com/icellan/bap) and BPP
 
 ## Why is Schema Important?
 
