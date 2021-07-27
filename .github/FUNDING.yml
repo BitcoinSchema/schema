@@ -1,3 +1,4 @@
 # These are supported funding model platforms
 
-custom: https://bitcoinschema.org
+github: BitcoinSchema
+custom: https://bitcoinschema.org/?utm_source=github&utm_medium=sponsor-link&utm_campaign=schema&utm_term=schema&utm_content=schema
