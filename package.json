@@ -33,7 +33,7 @@
     "@commitlint/config-conventional": "13.1.0",
     "browser-sync": "^2.27.5",
     "concurrently": "^6.2.0",
-    "conventional-github-releaser": "^3.1.1",
+    "conventional-github-releaser": "^3.1.5",
     "docsify-cli": "^4.4.3",
     "finepack": "^2.10.11",
     "git-authors-cli": "^1.0.35",
@@ -99,5 +99,8 @@
       "standard-markdown",
       "git add"
     ]
+  },
+  "dependencies": {
+    "sass": "^1.36.0"
   }
 }
