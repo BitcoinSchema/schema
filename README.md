@@ -16,49 +16,65 @@ Community driven extensible schemas that enable developers to create interoperab
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
+- [Sponsors](#sponsors)
 - [License](#license)
 
 ## About
 Standing on the shoulders of giants, our idea was inspired by the [Schema.org](https://schema.org) project.
-(more to come...)
+`(more to come...) @Satchmo` 
+
+<br />
 
 ### What is Schema?
 [Read more here](https://bitcoinschema.org)
+
+<br />
 
 ## Installation
 This project uses [gulp](https://gulpjs.com/) for workflow automation and [docsify](https://docsify.js.org) for the documentation generation and hosting.
 
 Install all npm packages
-```bash 
-$ cd /projects/schema
-$ npm install   
-```    
-
-Serve the docs via `localhost:port`
 ```bash
-$ npm run start
+$ make install
+```   
+
+Serve the documentation via `localhost:port` e.g. `http://localhost:4000`
+```bash
+$ make start
 ``` 
 
-See more scripts in the [package.json](package.json) file
+See more scripts in the [package.json](package.json) file or the [makefile](Makefile).
+
+<br />
 
 ## Documentation
 Visit [our live documentation](https://bitcoinschema.org) site.
 
+<br />
+
 ## Examples
 Websites or applications using Schema:
-- [map.sv](https://map.sv/)
-- [TonicPow](https://tonicpow.com/)
+- [map.sv](https://map.sv/?utm_source=github&utm_medium=sponsor-link&utm_campaign=schema&utm_term=schema&utm_content=schema)
+- [TonicPow](https://tonicpow.com/?utm_source=github&utm_medium=sponsor-link&utm_campaign=schema&utm_term=schema&utm_content=schema)
+
+<br />
 
 ## Code Standards
 Please read our [standards document](CODE_STANDARDS.md)
 
+<br />
+
 ## Usage
 Here's the [getting started](https://bitcoinschema.org/) with schema
+
+<br />
 
 ## Maintainers
 [Satchmo](https://github.com/rohenaz) - [MrZ](https://github.com/mrz1836) 
 
 Support the development of this project and the [Schema](http://bitcoinschema.org/) team 🙏
+
+<br />
 
 ## Contributing
 Feel free to dive in! [Suggest a new schema](https://github.com/bitcoinschema/schema/issues/new/choose) or submit PRs.
@@ -67,13 +83,16 @@ Open source tools that we used in this project:
 - [docsify](https://docsify.js.org) - A magical documentation site generator
 - [mythbusters js](https://github.com/Kikobeats/js-mythbusters) - Professional deployment of docsify
 
+<br />
+
 ## Contributors
 Contribute today and join the team!
 
-| [<img src="assets/avatars/mrz-img.jpeg" height="50" alt="MrZ" />](https://mrz1818.com/) | [<img src="assets/avatars/satchmo.png" height="50" alt="Satchmo" />](https://github.com/rohenaz) |
-|:---:|:---:|
-| [MrZ](https://mrz1818.com/) | [Satchmo](https://github.com/rohenaz)  |
+| [<img src="https://github.com/mrz1836.png" height="50" alt="MrZ" />](https://github.com/mrz1836) | [<img src="https://github.com/rohenaz.png" height="50" alt="Satchmo" />](https://github.com/rohenaz) |
+| :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+|                                [MrZ](https://github.com/mrz1836)                                 |                                [Satchmo](https://github.com/rohenaz)                                 |
 
+<br />
 
 ## Sponsors
 Are you interested in becoming a sponsor of Schema? [Let us know!](https://github.com/bitcoinschema/schema/issues/new/choose)
@@ -82,6 +101,7 @@ Are you interested in becoming a sponsor of Schema? [Let us know!](https://githu
 |:---:|:---:|:---:|
 | [TonicPow](https://tonicpow.com/)  | [MetaLens](https://metalens.app/)  | [All Aboard](https://allaboardbitcoin.com/)  |
 
+<br />
 
 ## License
 [![License](https://img.shields.io/badge/license-Open%20BSV-brightgreen.svg?style=flat)](/LICENSE)
