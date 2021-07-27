@@ -5,7 +5,7 @@ const prefix = require('gulp-autoprefixer')
 const cssnano = require('gulp-cssnano')
 const uglify = require('gulp-uglify')
 const concat = require('gulp-concat')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const gulp = require('gulp')
 
 const src = {
