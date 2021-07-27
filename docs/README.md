@@ -22,6 +22,6 @@ There are a number of tools available for both recording data types listed here 
 
 ## Who is using Bitcoin Schema?
 
-[Tonicpow](https://tonicpow.com), [BlockPost](https://blockpost.network), [MetaLens](https://metalens.app) and many others. If you're using Bitcoin Schema in your application and would like to be listed here, contact us or submit a pull reguest [here](https://github.com/BitcoinSchema/schema)
+[Tonicpow](https://tonicpow.com), [BlockPost](https://blockpost.network), [MetaLens](https://metalens.app) and many others. If you're using Bitcoin Schema in your application and would like to be listed here, contact us or submit a pull request [here](https://github.com/BitcoinSchema/schema)
 
 ?> _Note_: Currently Bitcoin Schema is made up of OP_RETURN based data protocols. In the future, we expect OP_PUSHDATA based protocols to emerge. As new standards are adopted, they will be incorporated into the models registered here, or new variants will be listed.

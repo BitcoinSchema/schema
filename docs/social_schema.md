@@ -126,7 +126,7 @@ tx, err := CreateReply(reply, replyTxID, utxos, changeAddress, privateKey)
 
 ## Repost
 
-A repost is used to amplify an existing post, without reposting the actual content. Like with a post, it is possible to repost with a new context and/or subcontext. This allows you surface posts in multiple contexts. Imagine a post is made with a context of a UPC code (comment on a physical produt). Someone might then repost that comment with a context of 'url' and value = the company's web address. This would repost that comment against the company website, surfacing it in new apps such as metalens.
+A repost is used to amplify an existing post, without reposting the actual content. Like with a post, it is possible to repost with a new context and/or subcontext. This allows you surface posts in multiple contexts. Imagine a post is made with a context of a UPC code (comment on a physical product). Someone might then repost that comment with a context of 'url' and value = the company's web address. This would repost that comment against the company website, surfacing it in new apps such as MetaLens.
 
 ##### Optional Parameters
 

@@ -2,7 +2,7 @@
 
 ### JavaScript
 
-First, we'll demonstrate creating a new transaction containing some data according to a Bitcoion Schema. For this example, we will create a new "like". Likes refer to an existing transaction by its transaction ID.
+First, we'll demonstrate creating a new transaction containing some data according to a BitCoin Schema. For this example, we will create a new "like". Likes refer to an existing transaction by its transaction ID.
 
 Here, we use RelayOne Javascript API to create the transaction. This is very similar to creating the tx using MoneyButton, and is simplified for demonstration purposes.
 
