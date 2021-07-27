@@ -46,7 +46,7 @@
     "gulp-uglify": "^3.0.2",
     "lint-staged": "^11.1.1",
     "npm-check-updates": "^11.8.3",
-    "prettier-standard": "^15.0.1",
+    "prettier-standard": "^16.4.1",
     "standard": "^16.0.3",
     "standard-markdown": "^6.0.0",
     "standard-version": "^9.3.1"
