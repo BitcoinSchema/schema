@@ -4,7 +4,8 @@ Community driven extensible schemas that enable developers to create interoperab
 [![last commit](https://img.shields.io/github/last-commit/bitcoinschema/schema.svg?style=flat)](https://github.com/bitcoinschema/schema/commits/master)
 [![version](https://img.shields.io/github/release-pre/bitcoinschema/schema.svg?style=flat)](https://github.com/bitcoinschema/schema/releases)
 [![license](https://img.shields.io/badge/license-Open%20BSV-brightgreen.svg?style=flat)](/LICENSE)
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat)](https://github.com/RichardLitt/standard-readme)
+[![app health](https://img.shields.io/website-up-down-green-red/https/bitcoinschema.org.svg?label=status&v=1)](https://bitcoinschema.org)
+[![Sponsor](https://img.shields.io/badge/sponsor-BitcoinSchema-181717.svg?logo=github&style=flat&v=1)](https://github.com/sponsors/BitcoinSchema)
 [![slack](https://img.shields.io/badge/slack-schema-blue.svg?style=flat)](https://atlantistic.slack.com/app_redirect?channel=schema)
 
 ## Table of Contents
@@ -282,9 +283,9 @@ Here's the [getting started](https://bitcoinschema.org/) with schema
 <br />
 
 ## Maintainers
-[Satchmo](https://github.com/rohenaz) - [MrZ](https://github.com/mrz1836) 
-
-Support the development of this project and the [Schema](http://bitcoinschema.org/) team 🙏
+| [<img src="https://github.com/mrz1836.png" height="50" alt="MrZ" />](https://github.com/mrz1836) | [<img src="https://github.com/rohenaz.png" height="50" alt="Satchmo" />](https://github.com/rohenaz) |
+| :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+|                                [MrZ](https://github.com/mrz1836)                                 |                                [Satchmo](https://github.com/rohenaz)                                 |
 
 <br />
 
