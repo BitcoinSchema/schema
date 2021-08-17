@@ -47,7 +47,7 @@
     "lint-staged": "^11.1.2",
     "npm-check-updates": "^11.8.3",
     "prettier-standard": "^16.4.1",
-    "sass": "^1.37.5",
+    "sass": "^1.38.0",
     "standard": "^16.0.3",
     "standard-markdown": "^6.0.0",
     "standard-version": "^9.3.1"
@@ -102,6 +102,6 @@
     ]
   },
   "dependencies": {
-    "sass": "^1.37.5"
+    "sass": "^1.38.0"
   }
 }
