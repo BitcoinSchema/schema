@@ -49,3 +49,12 @@
 - color: ea85de
   description: "Interested in becoming a sponsor"
   name: "new-sponsor"
+- color: FEF2C0
+  description: "Used for automatic merging"
+  name: "automerge"
+- color: FBCA04
+  description: "Used for denoting a WIP, stops auto-merge"
+  name: "work-in-progress"
+- color: c2e0c6
+  description: "Old, unused, stale"
+  name: "stale"

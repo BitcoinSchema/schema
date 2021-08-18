@@ -32,6 +32,8 @@ pull_request_rules:
   - name: Automatic Merge ⬇️ on Approval ✔
     conditions:
       - "#approved-reviews-by>=1"
+      - check-success='Analyze (javascript)'
+      - label!=work-in-progress
       - -draft
     actions:
       merge:
@@ -156,8 +158,7 @@ pull_request_rules:
     actions:
       comment:
         message: |
-          Welcome to our open-source project!
-          We're delighted to have you onboard 💘
+          Welcome to our open-source project! 💘
 
   # ===============================================================================
   # STALE BRANCHES
@@ -172,6 +173,8 @@ pull_request_rules:
       close:
         message: |
           This pull request looks stale. Feel free to reopen it if you think it's a mistake.
+      label:
+        add: [ "stale" ]
 
   # ===============================================================================
   # BRANCHES
@@ -182,14 +185,6 @@ pull_request_rules:
       - merged
     actions:
       delete_head_branch:
-
-  #- name: automatic update for PR marked as “Ready-to-Go“
-  #  conditions:
-  #    - -conflict # skip PRs with conflicts
-  #    - -draft # filter-out GH draft PRs
-  #    - label="Ready-to-Go"
-  #  actions:
-  #    update:
 
   # ===============================================================================
   # CONVENTION
