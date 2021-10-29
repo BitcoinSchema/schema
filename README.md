@@ -275,7 +275,7 @@ Websites or applications using Schema:
 <br />
 
 ## Code Standards
-Please read our [standards document](CODE_STANDARDS.md)
+Please read our [standards document](.github/CODE_STANDARDS.md)
 
 <br />
 
