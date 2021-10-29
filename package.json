@@ -2,7 +2,7 @@
   "name": "bitcoin-schema",
   "description": "Community driven extensible schemas that enable developers to create interoperable data based applications.",
   "homepage": "https://bitcoinschema.org",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "docs/index.html",
   "bugs": {
     "url": "https://github.com/bitcoinschema/schema/issues"
@@ -46,7 +46,7 @@
     "gulp-uglify": "^3.0.2",
     "lint-staged": "^11.2.6",
     "npm-check-updates": "^11.8.5",
-    "prettier-standard": "^15.0.1",
+    "prettier-standard": "^16.4.1",
     "sass": "^1.43.4",
     "standard": "^16.0.4",
     "standard-markdown": "^7.1.0",
