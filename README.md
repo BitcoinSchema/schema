@@ -1,5 +1,5 @@
 # BitCoin [Schema](https://bitcoinschema.org)
-Community driven extensible schemas that enable developers to create interoperable data based applications. View [schema in action](https://map.sv/).
+> Community driven extensible schemas that enable developers to create interoperable data based applications. View [schema in action](https://map.sv/).
 
 [![last commit](https://img.shields.io/github/last-commit/bitcoinschema/schema.svg?style=flat)](https://github.com/bitcoinschema/schema/commits/master)
 [![version](https://img.shields.io/github/release-pre/bitcoinschema/schema.svg?style=flat)](https://github.com/bitcoinschema/schema/releases)
