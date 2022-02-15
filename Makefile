@@ -70,6 +70,9 @@ audit: ## Checks for vulnerabilities in dependencies
 build: ## Builds the package for web distribution
 	@npm run build
 
+ci: ## Installs the dependencies for the package using CI
+	@npm ci
+
 clean: ## Remove previous builds and any test cache data
 	@npm run clean
 	@if [ -d $(DISTRIBUTIONS_DIR) ]; then rm -r $(DISTRIBUTIONS_DIR); fi

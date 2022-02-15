@@ -25,7 +25,7 @@ jobs:
           node-version: '14'
           cache: 'npm'
       - name: Install package deps
-        run: make install
+        run: make ci
       - name: Set up Go
         uses: actions/setup-go@v2.2.0
         with:
