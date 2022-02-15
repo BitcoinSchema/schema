@@ -286,7 +286,7 @@ Here's the [getting started](https://bitcoinschema.org/) with schema
 
 ## Maintainers
 | [<img src="https://github.com/mrz1836.png" height="50" alt="MrZ" />](https://github.com/mrz1836) | [<img src="https://github.com/rohenaz.png" height="50" alt="Satchmo" />](https://github.com/rohenaz) |
-| :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+|:------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------:|
 |                                [MrZ](https://github.com/mrz1836)                                 |                                [Satchmo](https://github.com/rohenaz)                                 |
 
 <br />
@@ -304,7 +304,7 @@ Open source tools that we used in this project:
 Contribute today and join the team!
 
 | [<img src="https://github.com/mrz1836.png" height="50" alt="MrZ" />](https://github.com/mrz1836) | [<img src="https://github.com/rohenaz.png" height="50" alt="Satchmo" />](https://github.com/rohenaz) |
-| :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+|:------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------:|
 |                                [MrZ](https://github.com/mrz1836)                                 |                                [Satchmo](https://github.com/rohenaz)                                 |
 
 <br />
@@ -312,9 +312,9 @@ Contribute today and join the team!
 ## Sponsors
 Are you interested in becoming a sponsor of Schema? [Let us know!](https://github.com/bitcoinschema/schema/issues/new/choose)
 
-| [<img src="assets/sponsors/tonicpow.png" height="50" alt="TonicPow" />](https://tonicpow.com/)  | [<img src="assets/sponsors/metalens.png" height="50" alt="MetaLens" />](https://metalens.app/)  | [<img src="assets/sponsors/all-aboard.png" height="50" alt="All Aboard" />](https://allaboardbitcoin.com)  |
-|:---:|:---:|:---:|
-| [TonicPow](https://tonicpow.com/)  | [MetaLens](https://metalens.app/)  | [All Aboard](https://allaboardbitcoin.com/)  |
+| [<img src="assets/sponsors/tonicpow.png" height="50" alt="TonicPow" />](https://tonicpow.com/) | [<img src="assets/sponsors/metalens.png" height="50" alt="MetaLens" />](https://metalens.app/) | [<img src="assets/sponsors/all-aboard.png" height="50" alt="All Aboard" />](https://allaboardbitcoin.com) |
+|:----------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|
+|                               [TonicPow](https://tonicpow.com/)                                |                               [MetaLens](https://metalens.app/)                                |                                [All Aboard](https://allaboardbitcoin.com/)                                |
 
 <br />
 
