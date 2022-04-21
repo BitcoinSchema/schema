@@ -48,7 +48,7 @@
     "npm-check-updates": "^12.5.9",
     "prettier-standard": "^13.0.6",
     "sass": "^1.50.1",
-    "standard": "^16.0.4",
+    "standard": "^17.0.0",
     "standard-markdown": "^7.1.0",
     "standard-version": "^9.3.2"
   },
