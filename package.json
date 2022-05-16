@@ -50,7 +50,7 @@
     "sass": "^1.51.0",
     "standard": "^17.0.0",
     "standard-markdown": "^7.1.0",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.5.0"
   },
   "engines": {
     "node": ">= 8"
