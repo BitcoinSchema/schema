@@ -3,13 +3,16 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: latest
+      nodejs: 14
     commands:
       # Install yarn
-      - yum -y install yarn
+      - apt update
+      - apt install --no-install-recommends yarn
+      #- curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash
+      #- sudo apt-get install -y nodejs
 
       # Install firebase tools
-      - yarn global add firebase-tools
+      - yarn global add firebase-tools@10.9.2
 
   pre_build:
     commands:
