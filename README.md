@@ -6,7 +6,7 @@
 [![license](https://img.shields.io/badge/license-Open%20BSV-brightgreen.svg?style=flat)](/LICENSE)
 [![app health](https://img.shields.io/website-up-down-green-red/https/bitcoinschema.org.svg?label=status&v=1)](https://bitcoinschema.org)
 <br>
-[![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/BitcoinSchema/schema&style=flat&v=3)](https://mergify.io)
+[![Mergify Status](https://img.shields.io/endpoint.svg?url=https://api.mergify.com/v1/badges/BitcoinSchema/schema&style=flat&v=3)](https://mergify.io)
 [![Sponsor](https://img.shields.io/badge/sponsor-BitcoinSchema-181717.svg?logo=github&style=flat&v=1)](https://github.com/sponsors/BitcoinSchema)
 [![slack](https://img.shields.io/badge/slack-schema-blue.svg?style=flat)](https://atlantistic.slack.com/app_redirect?channel=schema)
 
