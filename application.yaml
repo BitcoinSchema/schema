@@ -1,0 +1,345 @@
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy.html
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Serverless web app for the BitcoinSchema website deployment
+
+# More info about Parameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+Parameters:
+  ApplicationName:
+    Description: 'used to create the name of the application in cloud formation'
+    Type: String
+    AllowedPattern: '[a-zA-Z0-9-_]*'
+    MinLength: 3
+    MaxLength: 64
+    ConstraintDescription: 'must be a valid application name'
+
+  ApplicationStackName:
+    Description: 'used to create the name of the stack in cloud formation'
+    Type: String
+    AllowedPattern: '[a-zA-Z0-9-_]*'
+    MinLength: 3
+    MaxLength: 64
+    ConstraintDescription: 'must be a valid application stack name'
+
+  ApplicationStageName:
+    Description: 'used for the de-coupling based on environment (IE: prod)'
+    Type: String
+    AllowedPattern: '[a-zA-Z0-9-_]*'
+    MaxLength: 16
+    ConstraintDescription: 'must be a valid stage name (IE: dev, staging, prod)'
+
+  ApplicationBucket:
+    Type: String
+    Description: 'Pre-existing S3 bucket that will store the application files for deployment'
+    MinLength: 5
+    AllowedPattern: '[A-Za-z0-9-_]+'
+    ConstraintDescription: 'must be a valid s3 bucket location'
+
+  EncryptionKeyId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: 'The ID of the KMS key used to decrypt environment variables'
+    MinLength: 5
+
+  RepoOwner:
+    Type: String
+    Description: 'the repository owner or username'
+    MinLength: 2
+    AllowedPattern: '[A-Za-z0-9-]+'
+    ConstraintDescription: 'must be a valid repository username'
+
+  RepoName:
+    Type: String
+    Description: 'the repository name'
+    MinLength: 1
+    AllowedPattern: '[A-Za-z0-9-_]+'
+    ConstraintDescription: 'must be a valid repository name'
+
+  RepoBranch:
+    Type: String
+    Description: 'the repository branch that will trigger automatic deployments'
+    MinLength: 1
+    AllowedPattern: '[A-Za-z0-9-_/]+'
+    ConstraintDescription: 'must be a valid branch name'
+
+  FirebaseProject:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: 'the name of the project'
+    MinLength: 5
+
+  FirebaseSenderId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: 'this is the sender id supplied from Firebase for the project'
+    MinLength: 5
+
+  FirebaseAppId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: 'this is the app id supplied from Firebase for the project'
+    MinLength: 5
+
+# More info about MetaData: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-publishing-applications-metadata-properties.html
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: !Ref ApplicationStackName
+    Description: 'Serverless app for the BitcoinSchema website deployment'
+    Author: MrZ
+    #ReadmeUrl: README.md
+    Labels: ['bitcoinschema', 'bitcoin', 'schema']
+    HomePageUrl: !Sub 'https://github.com/${RepoOwner}/${RepoName}'
+    SemanticVersion: '0.0.1'
+    SourceCodeUrl: !Sub 'https://github.com/${RepoOwner}/${RepoName}'
+
+# More info about Resources: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-resources-and-properties.html
+Resources:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
+  CodePipeline:
+    Type: AWS::CodePipeline::Pipeline
+    DependsOn:
+      - BuildAndDeploy
+      - CodeBuildRole
+      - CodePipelineRole
+    Properties:
+      Name: !Sub '${ApplicationStackName}-deployment'
+      ArtifactStore:
+        Type: S3
+        Location: !Ref ApplicationBucket
+      RestartExecutionOnUpdate: false
+      RoleArn: !GetAtt CodePipelineRole.Arn
+      Stages:
+        - Name: Source
+          Actions:
+            - Name: Source-From-Github
+              InputArtifacts: []
+              RunOrder: 1
+              ActionTypeId:
+                Category: Source
+                Owner: ThirdParty
+                Version: 1
+                Provider: GitHub
+              OutputArtifacts:
+                - Name: SourceCode
+              Configuration:
+                Owner: !Ref RepoOwner
+                Repo: !Ref RepoName
+                Branch: !Ref RepoBranch
+                PollForSourceChanges: false
+                OAuthToken: !Sub '{{resolve:secretsmanager:${ApplicationStageName}/${ApplicationName}:SecretString:github_personal_token}}'
+        - Name: Build
+          Actions:
+            - Name: Build-and-Deploy-Stack
+              RunOrder: 3
+              InputArtifacts:
+                - Name: SourceCode
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              Configuration:
+                ProjectName:
+                  Ref: BuildAndDeploy
+
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html
+  BuildAndDeploy:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Sub '${ApplicationStackName}-build-deploy'
+      ServiceRole: !Ref CodeBuildRole
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        #Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+        Image: aws/codebuild/standard:5.0
+        EnvironmentVariables:
+          - Name: APPLICATION_STAGE_NAME
+            Type: PLAINTEXT
+            Value: !Ref ApplicationStageName
+          - Name: FIREBASE_APP_ID
+            Type: PLAINTEXT
+            Value: !Ref FirebaseAppId
+          - Name: FIREBASE_SENDER_ID
+            Type: PLAINTEXT
+            Value: !Ref FirebaseSenderId
+          - Name: FIREBASE_API_KEY
+            Type: PLAINTEXT
+            Value: !Sub '{{resolve:secretsmanager:${ApplicationStageName}/${ApplicationName}:SecretString:firebase_api_key_encrypted}}'
+          - Name: FIREBASE_PROJECT
+            Type: PLAINTEXT
+            Value: !Ref FirebaseProject
+          - Name: FIREBASE_TOKEN
+            Type: PLAINTEXT
+            Value: !Sub '{{resolve:secretsmanager:${ApplicationStageName}/${ApplicationName}:SecretString:firebase_token_encrypted}}'
+          - Name: ENCRYPTION_KEY_ID
+            Type: PLAINTEXT
+            Value: !Ref EncryptionKeyId
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: 'buildspec.yml'
+      TimeoutInMinutes: 15
+
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html
+  GithubWebhook:
+    Type: 'AWS::CodePipeline::Webhook'
+    DependsOn:
+      - CodePipeline
+    Properties:
+      Authentication: GITHUB_HMAC
+      AuthenticationConfiguration:
+        SecretToken: !Sub '{{resolve:secretsmanager:${ApplicationStageName}/${ApplicationName}:SecretString:github_personal_token}}'
+      RegisterWithThirdParty: 'true'
+      Filters:
+        - JsonPath: '$.ref'
+          MatchEquals: refs/heads/{Branch}
+      TargetPipeline: !Ref CodePipeline
+      TargetAction: Source-From-Github
+      TargetPipelineVersion: !GetAtt CodePipeline.Version
+
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
+  CodeBuildRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - codebuild.amazonaws.com
+                - kms.amazonaws.com
+                - logs.amazonaws.com
+                - s3.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: DecryptEnvVars
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - kms:DescribeKey
+                  - kms:Decrypt
+                Resource: !Sub 'arn:aws:kms:${AWS::Region}:${AWS::AccountId}:key/${EncryptionKeyId}'
+        - PolicyName: FirebaseBuildDeploy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource:
+                  - !Sub 'arn:aws:codebuild:${AWS::Region}:${AWS::AccountId}:build/${ApplicationStackName}-build-deploy:*'
+                  - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group/aws/codebuild/${ApplicationStackName}-build-deploy'
+                  - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group/aws/codebuild/${ApplicationStackName}-build-deploy:*'
+                  - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/${ApplicationStackName}-build-deploy:log-stream:*'
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:GetObject
+                  - s3:GetObjectVersion
+                  - s3:GetBucketAcl
+                  - s3:GetBucketLocation
+                Resource:
+                  - !Sub 'arn:aws:s3:::codepipeline-${AWS::Region}-*'
+                  - !Sub 'arn:aws:s3:::${ApplicationBucket}/*'
+              - Effect: Allow
+                Action:
+                  - codebuild:CreateReportGroup
+                  - codebuild:CreateReport
+                  - codebuild:UpdateReport
+                  - codebuild:BatchPutTestCases
+                Resource:
+                  - !Sub 'arn:aws:codebuild:${AWS::Region}:${AWS::AccountId}:report-group/${ApplicationStackName}-build-deploy-*'
+              - Effect: Allow
+                Action:
+                  - ssm:Get*
+                Resource:
+                  - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${ApplicationName}/${ApplicationStageName}*'
+
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
+  CodePipelineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - codepipeline.amazonaws.com
+                - s3.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: PipelineDeployRole
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Action:
+                  - iam:PassRole
+                Resource: '*'
+                Effect: Allow
+                Condition:
+                  StringEqualsIfExists:
+                    iam:PassedToService:
+                      - cloudformation.amazonaws.com
+                      - elasticbeanstalk.amazonaws.com
+                      - ec2.amazonaws.com
+                      - ecs-tasks.amazonaws.com
+              - Action:
+                  - codedeploy:CreateDeployment
+                  - codedeploy:GetApplication
+                  - codedeploy:GetApplicationRevision
+                  - codedeploy:GetDeployment
+                  - codedeploy:GetDeploymentConfig
+                  - codedeploy:RegisterApplicationRevision
+                Resource: '*'
+                Effect: Allow
+              - Action:
+                  - cloudwatch:*
+                  - elasticbeanstalk:DescribeApplications
+                  - elasticbeanstalk:DescribeEnvironments
+                  - sns:*
+                Resource: '*'
+                Effect: Allow
+              - Action:
+                  - s3:CreateBucket
+                  - s3:GetBucketPolicy
+                  - s3:GetBucketVersioning
+                  - s3:GetObject
+                  - s3:GetObjectAcl
+                  - s3:GetObjectVersion
+                  - s3:ListAllMyBuckets
+                  - s3:ListBucket
+                  - s3:PutBucketPolicy
+                  - s3:PutObject
+                  - s3:PutObjectAcl
+                Resource:
+                  - !Sub 'arn:aws:s3:::${ApplicationBucket}/*'
+                  - !Sub 'arn:aws:s3:::${ApplicationBucket}/${ApplicationStackName}'
+                  - !Sub 'arn:aws:s3:::${ApplicationBucket}/${ApplicationStackName}*'
+                Effect: Allow
+              - Action:
+                  - lambda:GetFunctionConfiguration
+                  - lambda:InvokeFunction
+                  - lambda:ListFunctions
+                Resource: '*'
+                Effect: Allow
+              - Action:
+                  - codebuild:BatchGetBuilds
+                  - codebuild:StartBuild
+                Resource: '*'
+                Effect: Allow
+              - Action:
+                  - cloudformation:ValidateTemplate
+                Effect: Allow
+                Resource: '*'
+
+# More info about Outputs: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
+Outputs:
+  CreatedPipeline:
+    Description: 'CI Deployment Created'
+    Value: !Sub 'Stage: ${ApplicationStageName} Pipeline: ${CodePipeline} Firebase Project: ${FirebaseProject}'

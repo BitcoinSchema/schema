@@ -1,9 +1,9 @@
-# **Schema**
+# **Bitcoin Schema**
 
-> Structured data for BitCoin applications
+> Data definitions for Bitcoin applications
 
-- Integrate with hundreds of applications
-- Gravity network effect
+- Unlock Limitless Interoperability
+- Build Collaborative Networks
 
 [Learn More](#what-is-schema)
 [Browse Schemas](schemas.md)

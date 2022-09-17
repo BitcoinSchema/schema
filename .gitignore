@@ -40,7 +40,9 @@ node_modules/
 
 # WebStorm
 .idea
-
-# Mac / Win files
 .DS_Store
-thumbs.db
+todo.md
+
+# Deployment
+release
+packaged.yaml
