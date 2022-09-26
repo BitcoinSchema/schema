@@ -147,10 +147,9 @@ MAP SET app <appame> type repost tx <txid> | AIP paymail <pubkey> <signature>
 tx, err := CreateRepost(repostTxID, utxos, changeAddress, privateKey)
 ```
 
+## Message
 
-## Chat
-
-Chat is similar to post, but a seperate namespace intended for real time chat content.
+Message is similar to post, but a seperate namespace intended for real time chat content.
 
 - B protocol is used for the content. This means the chat message could be anything from plain text, an image, some markdown, or even binary. Any file type can be expressed as a message.
 - Attachments can be made in addition to the message content (see [Attachments])
@@ -159,11 +158,13 @@ Chat is similar to post, but a seperate namespace intended for real time chat co
 ##### OP_RETURN
 
 Global chat:
+
 ```
 B <content> <mediaType> <encoding> | MAP SET app <appame> type message | AIP paymail <pubkey> <signature>
 ```
 
 Specific channel:
+
 ```
 B <content> <mediaType> <encoding> | MAP SET app <appame> type message context channel channel my-chatroom | AIP paymail <pubkey> <signature>
 ```
