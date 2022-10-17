@@ -7,7 +7,7 @@ Used to express positive sentiment about a post, transaction, or any other globa
 ###### OP_RETURN
 
 ```
-MAP SET app <appame> type like tx <txid> | AIP paymail <pubkey> <signature>
+MAP SET app <appame> type like tx <txid> | AIP paymail <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -23,7 +23,7 @@ Used to undo a like
 ##### OP_RETURN
 
 ```
-MAP SET app <appame> type unlike tx <txid> | AIP paymail <pubkey> <signature>
+MAP SET app <appame> type unlike tx <txid> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -39,7 +39,7 @@ Used to express a relationship between two identities.
 ##### OP_RETURN
 
 ```
-MAP SET app <appame> type follow idKey <pubkey> | AIP paymail <pubkey> <signature>
+MAP SET app <appame> type follow bapID <bapID> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -56,7 +56,7 @@ Used to express a relationship between two identities.
 ##### OP_RETURN
 
 ```
-MAP SET app <appame> type unfollow idKey <pubkey> | AIP paymail <pubkey> <signature>
+MAP SET app <appame> type unfollow bapID <pubkey> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -272,3 +272,5 @@ post := Post{
 ``` -->
 
 ?> "MAP" is a placeholder for the Magic Attribute Protocol prefix, which is 1PuQa7K62MiKCtssSLKy1kh56WWU7MtUR5
+
+?> "AIP" is a placeholder for the Author Identity Protocol prefix, which is 15PciHG22SNLQJXMoSUaWVi7WSqc7hCfva
