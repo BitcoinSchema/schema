@@ -7,7 +7,7 @@ Used to express positive sentiment about a post, transaction, or any other globa
 ###### OP_RETURN
 
 ```
-MAP SET app <appame> type like tx <txid> | AIP paymail <address> <signature>
+MAP SET app <appame> type like tx <txid> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -34,12 +34,22 @@ tx, err := CreateUnlike(unlikeTxID, utxos, changeAddress, privateKey)
 
 ## Follow
 
-Used to express a relationship between two identities.
+Used to express a one-way relationship between two identities.
 
 ##### OP_RETURN
 
 ```
 MAP SET app <appame> type follow bapID <bapID> | AIP BITCOIN_ECDSA <address> <signature>
+```
+
+## Friend
+
+Used to express a two-way relationship between two identities and allow for secured communications.
+
+##### OP_RETURN
+
+```
+MAP SET app <appame> type friend bapID <bapID> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -77,7 +87,7 @@ Post is meant to express a new piece of content to the network.
 ##### OP_RETURN
 
 ```
-B <content> <mediaType> <encoding> | MAP SET app <appame> type post | AIP paymail <pubkey> <signature>
+B <content> <mediaType> <encoding> | MAP SET app <appame> type post | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### Optional Parameters
@@ -110,7 +120,7 @@ Replies are just Posts with a context of a transaction ID.
 ##### OP_RETURN
 
 ```
-OP_FALSE OP_RETURN B <content> <mediaType> <encoding> | MAP SET app <appame> type post context tx tx <txid> | AIP paymail <pubkey> <signature>
+OP_FALSE OP_RETURN B <content> <mediaType> <encoding> | MAP SET app <appame> type post context tx tx <txid> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -138,7 +148,7 @@ A repost is used to amplify an existing post, without reposting the actual conte
 ##### OP_RETURN
 
 ```
-MAP SET app <appame> type repost tx <txid> | AIP paymail <pubkey> <signature>
+MAP SET app <appame> type repost tx <txid> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -160,13 +170,19 @@ Message is similar to post, but a seperate namespace intended for real time chat
 Global chat:
 
 ```
-B <content> <mediaType> <encoding> | MAP SET app <appame> type message | AIP paymail <pubkey> <signature>
+B <content> <mediaType> <encoding> | MAP SET app <appame> type message | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 Specific channel:
 
 ```
-B <content> <mediaType> <encoding> | MAP SET app <appame> type message context channel channel my-chatroom | AIP paymail <pubkey> <signature>
+B <content> <mediaType> <encoding> | MAP SET app <appame> type message context channel channel my-chatroom | AIP BITCOIN_ECDSA <address> <signature>
+```
+
+Specific user (private):
+
+```
+B <content> <mediaType> <encoding> | MAP SET app <appame> type message context bapID bapID <recipient-bap-ID> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### Optional Parameters
@@ -198,7 +214,7 @@ Tags are added as an additional output, with the following format:
 ##### OP_RETURN
 
 ```
-MAP ADD tags <tag1> <tag2> <tag3> ... | AIP paymail <pubkey> <signature>
+MAP ADD tags <tag1> <tag2> <tag3> ... | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
@@ -226,13 +242,13 @@ Attachments are included as additional OP_RETURN outputs using B protocol, signe
 Attachment 1:
 
 ```
-B <attachment1Data> <mediaType> <encoding> | paymail <pubkey> <signature>
+B <attachment1Data> <mediaType> <encoding> | BITCOIN_ECDSA <address> <signature>
 ```
 
 Attachment 2:
 
 ```
-B <attachment2Data> <mediaType> <encoding> | paymail <pubkey> <signature>
+B <attachment2Data> <mediaType> <encoding> | BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoinb-schema
