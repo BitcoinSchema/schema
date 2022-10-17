@@ -44,12 +44,26 @@ MAP SET app <appame> type follow bapID <bapID> | AIP BITCOIN_ECDSA <address> <si
 
 ## Friend
 
-Used to express a two-way relationship between two identities and allow for secured communications.
+Used to express a two-way relationship between two identities and allow for secured communications. Generate the publicKey for future communications based on a SHA256 hash of the other user's bapID. (getSigningPathFromHex is a function from the BAP library).
+
+#### Generate public key
+
+```js
+const seedHex = bsv.crypto.Hash.sha256(Buffer.from(friendIdKey)).toString(
+  "hex"
+);
+const signingPath = getSigningPathFromHex(
+  Buffer.from(seedHex, "utf8").toString("hex")
+);
+const hdPrivateFriendKey = bsv.HDPrivateKey.deriveChild(signingPath);
+
+const publicFriendKey = hdPrivateFriendKey.privateKey.publicKey;
+```
 
 ##### OP_RETURN
 
 ```
-MAP SET app <appame> type friend bapID <bapID> | AIP BITCOIN_ECDSA <address> <signature>
+MAP SET app <appame> type friend bapID <bapID> publicKey <publicFriendKey> | AIP BITCOIN_ECDSA <address> <signature>
 ```
 
 ##### go-bitcoin-schema
