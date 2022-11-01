@@ -65,10 +65,10 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.1.0.tgz#9bd852766e08842bfe0fe4deb40e152eb718ec1b"
-  integrity sha512-WU2p0c9/jLi8k2q2YrDV96Y8XVswQOceIQ/wyJvQxawJSCasLdRB3kUIYdNjOCJsxkpoUlV/b90ZPxp1MYZDiA==
+"@commitlint/config-conventional@17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.2.0.tgz#245086582cb02901eb4beaa52bc87d138238178f"
+  integrity sha512-g5hQqRa80f++SYS233dbDSg16YdyounMTAhVcmqtInNeY/GF3aA4st9SVtJxpeGrGmueMrU4L+BBb+6Vs5wrcg==
   dependencies:
     conventional-changelog-conventionalcommits "^5.0.0"
 
@@ -2225,19 +2225,10 @@ conventional-changelog-config-spec@2.1.0:
   resolved "https://registry.yarnpkg.com/conventional-changelog-config-spec/-/conventional-changelog-config-spec-2.1.0.tgz#874a635287ef8b581fd8558532bf655d4fb59f2d"
   integrity sha512-IpVePh16EbbB02V+UA+HQnnPIohgXvJRxHcS5+Uwk4AT5LjzCZJm5sp/yqs5C6KZJ1jMsV4paEV13BN1pvDuxQ==
 
-conventional-changelog-conventionalcommits@4.6.3:
+conventional-changelog-conventionalcommits@4.6.3, conventional-changelog-conventionalcommits@^4.5.0:
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-4.6.3.tgz#0765490f56424b46f6cb4db9135902d6e5a36dc2"
   integrity sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==
-  dependencies:
-    compare-func "^2.0.0"
-    lodash "^4.17.15"
-    q "^1.5.1"
-
-conventional-changelog-conventionalcommits@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-4.5.0.tgz#a02e0b06d11d342fdc0f00c91d78265ed0bc0a62"
-  integrity sha512-buge9xDvjjOxJlyxUnar/+6i/aVEVGA7EEh4OafBCXPlLUQPGbRUBhBUveWRxzvR8TEjhKEP4BdepnpG2FSZXw==
   dependencies:
     compare-func "^2.0.0"
     lodash "^4.17.15"
