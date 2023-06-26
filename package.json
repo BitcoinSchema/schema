@@ -29,7 +29,7 @@
     }
   ],
   "devDependencies": {
-    "@commitlint/cli": "^17.6.5",
+    "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "17.6.6",
     "browser-sync": "^2.29.3",
     "concurrently": "^8.2.0",
