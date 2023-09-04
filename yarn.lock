@@ -4332,10 +4332,10 @@ fined@^1.0.1:
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
 
-finepack@^2.10.15:
-  version "2.10.15"
-  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.10.15.tgz#caf32e95c22f97857de065729bc2fa4feacf9b71"
-  integrity sha512-adX1h0YEF0hZKT6MZDZm0FnO26YUffxR/ioi6IVg6yckvWugOTsNPr5pw9spABoOFggP2Qb4qbi6ZHZBOZ6Rjg==
+finepack@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.11.0.tgz#89606b884c48e425ca3334635a9ebbcd6adc6504"
+  integrity sha512-E5N+iiO7VJBG25Mre+0mTD72vlDOipj7fu/47W6n5QsJyDabyrRoyzhEkaC4EN3TqxYvmIoL0OXM+oIp3KqNzg==
   dependencies:
     acho "~4.0.6"
     acho-skin-cli "~2.0.1"
@@ -4347,7 +4347,7 @@ finepack@^2.10.15:
     lodash.omit "~4.5.0"
     meow "~9.0.0"
     normalize-package-data "~4.0.0"
-    sort-keys-recursive "~2.1.0"
+    sort-keys-recursive "~2.1.7"
     update-notifier "~5.1.0"
 
 flagged-respawn@^1.0.0:
@@ -10324,10 +10324,10 @@ socks@^2.6.2:
     ip "^2.0.0"
     smart-buffer "^4.2.0"
 
-sort-keys-recursive@~2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/sort-keys-recursive/-/sort-keys-recursive-2.1.1.tgz#076d3388472122808502cba569c0ed2b9ed8c022"
-  integrity sha512-lVz44xd+TyVbWeBQ8WYAgiOpNanqopcBshhTspbqfEA+EO9VYrmGd2aeYUc+HqM9SlKAJvcEhFM3eyFDzqmpJA==
+sort-keys-recursive@~2.1.7:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/sort-keys-recursive/-/sort-keys-recursive-2.1.8.tgz#f1af9c5beb56d5a325dc8382db0b341d03bdfd02"
+  integrity sha512-WsnhuSv6ls37VJgOLrImGI4/wleEhI8nmrOaggTVWtOsX40vs4/tGNarNT8ihYwUtbbzpY9LKKO/lNUckwPQjA==
   dependencies:
     kind-of "~6.0.2"
     sort-keys "~4.2.0"
