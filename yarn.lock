@@ -7852,10 +7852,10 @@ npm-bundled@^3.0.0:
   dependencies:
     npm-normalize-package-bin "^3.0.0"
 
-npm-check-updates@^16.14.0:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-16.14.0.tgz#e34b5af1176be2347b012946ad9bd0133bfed13e"
-  integrity sha512-0R4S0qsx2FhuSiIYloHc7RQwfZpzO4jdL3rUoYwbOkx5fBc9u77GHHS0FlXYpczHR/kPYmmB/CRkFElOofVeSg==
+npm-check-updates@^16.14.2:
+  version "16.14.2"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-16.14.2.tgz#bf86ba1044a469c5ab6ec97a35c1ab0ed7402963"
+  integrity sha512-7zLXG5h4ZyAHxSKDRs864ugVPM40EpKDwInwZMvCRMJ+h2oyVlAKB69XuBKB4qnur+KR+yj5ndXIIDKZYzUX8A==
   dependencies:
     chalk "^5.3.0"
     cli-table3 "^0.6.3"
