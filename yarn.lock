@@ -1784,7 +1784,7 @@ caniuse-lite@^1.0.30001399, caniuse-lite@^1.0.30001400:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001402.tgz#aa29e1f47f5055b0d0c07696a67b8b08023d14c8"
   integrity sha512-Mx4MlhXO5NwuvXGgVb+hg65HZ+bhUYsz8QtDGDo2QmaJS2GBX47Xfi2koL86lc8K+l+htXeTEB/Aeqvezoo6Ew==
 
-cb2promise@~1.1.0, cb2promise@~1.1.1:
+cb2promise@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/cb2promise/-/cb2promise-1.1.1.tgz#6d97ef9d031202175564eee48af09b17eceded68"
   integrity sha512-ShCxBARPFJlSO+Y4pxSpbXh6y+tW54Dmy4jKf0gB1C7qUslRqWqFi80+W9416zSoj6RsqMsnKUcpkt3bOrZmDg==
@@ -3976,7 +3976,7 @@ execa@^2.0.3, execa@^2.0.4:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-execa@^5.0.0, execa@~5.1.0:
+execa@^5.0.0, execa@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/execa/-/execa-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
   integrity sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==
@@ -4004,13 +4004,6 @@ existential@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/existential/-/existential-1.0.3.tgz#f89dfc3cd51f9ca0ad01b2f5dfcc226360f0c4fa"
   integrity sha1-+J38PNUfnKCtAbL138wiY2DwxPo=
-
-exists-file@~3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/exists-file/-/exists-file-3.0.2.tgz#8adfd3b32529302f2e61690b296789f8abd90edf"
-  integrity sha512-0mO5ZIWiJl35mTCkyyh/cU1ucn+17fOn7/P+QzNCby+/OLKOKKH9fR5kh+riKlNutxYTbZG+OHyYqFfQfpweGw==
-  dependencies:
-    cb2promise "~1.1.0"
 
 expand-brackets@^2.1.4:
   version "2.1.4"
@@ -4702,14 +4695,13 @@ gh-got@^7.0.0:
     got "^8.0.0"
     is-plain-obj "^1.1.0"
 
-git-authors-cli@^1.0.46:
-  version "1.0.46"
-  resolved "https://registry.yarnpkg.com/git-authors-cli/-/git-authors-cli-1.0.46.tgz#cf70bec8df810ceb984a7ad5ca69bf7f6e52a460"
-  integrity sha512-aRByRbF2GjHzlc58AQDFzg5kvZoTyzUAmDRyAfU7jkR/R4hUP/hlxq4mfh+m9cXFSqSv6LUl5HJmJY97+d6AFg==
+git-authors-cli@^1.0.47:
+  version "1.0.47"
+  resolved "https://registry.yarnpkg.com/git-authors-cli/-/git-authors-cli-1.0.47.tgz#5c1f611a9db30aec39c7418877faedeeaa0a7789"
+  integrity sha512-7Hc3cp6eUJGvUsul5yfYBhnJBH8CrhKA/5STjYJ0FAgn+EIc4oTpx8zkWJMC2zxiioK1qW4jfH7vS4vpu6hBDA==
   dependencies:
     email-regex "~4.0.0"
-    execa "~5.1.0"
-    exists-file "~3.0.2"
+    execa "~5.1.1"
     json-future "~2.2.18"
     mri "~1.2.0"
     picocolors "~1.0.0"
