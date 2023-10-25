@@ -35,7 +35,7 @@
     "concurrently": "^8.2.2",
     "conventional-github-releaser": "^3.1.5",
     "docsify-cli": "^4.4.4",
-    "finepack": "^2.11.2",
+    "finepack": "^2.11.3",
     "git-authors-cli": "^1.0.47",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
