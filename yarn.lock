@@ -4320,10 +4320,10 @@ fined@^1.0.1:
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
 
-finepack@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.11.2.tgz#2e0ad97934116b09ddc3f86fc25dd8a494c544dc"
-  integrity sha512-5oEOcNW9zUrGU2mUnZUDvsoOTlFsOh/drssR+r21bTTgrkz2DO/zq46SCEVaoMj9GFUbVlVgqr9P9vQ3vibRpA==
+finepack@^2.11.3:
+  version "2.11.3"
+  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.11.3.tgz#6836ce490268e9431ba55f760f43e42b93ede893"
+  integrity sha512-mAqWhVZod+H4PnPvdCYWkE9dA9dT8zalKaHxqF2115eDPIdSPCDBANXWog5M5pg8SIS1WhkQxjd3F73MoYi1pw==
   dependencies:
     acho "~4.0.6"
     acho-skin-cli "~2.0.1"
