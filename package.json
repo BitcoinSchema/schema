@@ -30,7 +30,7 @@
   ],
   "devDependencies": {
     "@commitlint/cli": "^19.1.0",
-    "@commitlint/config-conventional": "19.0.3",
+    "@commitlint/config-conventional": "19.1.0",
     "browser-sync": "^3.0.2",
     "concurrently": "^8.2.2",
     "conventional-github-releaser": "^3.1.5",
