@@ -3885,10 +3885,10 @@ fined@^2.0.0:
     object.pick "^1.3.0"
     parse-filepath "^1.0.2"
 
-finepack@^2.12.4:
-  version "2.12.4"
-  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.12.4.tgz#bbbdf77b0866c6df9805b6c898422fd2fba00f04"
-  integrity sha512-+d94HnqWDHYoLMlUeTOgQPVAXoJObHFrjPxewGDxLylYYtQ4jEowgaI96F6tzMKiEr3G85ukZP64OUhmLUhVxg==
+finepack@^2.12.6:
+  version "2.12.6"
+  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.12.6.tgz#46897cd4852b9a74c0e1e7b4de33331715979257"
+  integrity sha512-/02EJ7c/W7Ajt7i/v5JzY9o2NMHCN2BEW3sXk0sT3GcXcVK2FVopQkCa2bKjNpvlghNbO3duZkyob0CVEv0Hzg==
   dependencies:
     acho "~4.0.6"
     acho-skin-cli "~2.0.1"
@@ -3899,8 +3899,8 @@ finepack@^2.12.4:
     jsonlint "~1.6.3"
     lodash.omit "~4.5.0"
     mri "~1.2.0"
-    normalize-package-data "~4.0.0"
-    sort-keys-recursive "~2.1.7"
+    normalize-package-data "~6.0.1"
+    sort-keys-recursive "~2.1.10"
 
 flagged-respawn@^2.0.0:
   version "2.0.0"
@@ -4833,7 +4833,7 @@ hosted-git-info@^3.0.6:
   dependencies:
     lru-cache "^6.0.0"
 
-hosted-git-info@^5.0.0, hosted-git-info@^5.1.0:
+hosted-git-info@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-5.1.0.tgz#9786123f92ef3627f24abc3f15c20d98ec4a6594"
   integrity sha512-Ek+QmMEqZF8XrbFdwoDjSbm7rT23pCgEMOJmz6GPk/s4yH//RQfNPArhIxbguNxROq/+5lNBwCDHMhA903Kx1Q==
@@ -4846,6 +4846,13 @@ hosted-git-info@^6.0.0:
   integrity sha512-r0EI+HBMcXadMrugk0GCQ+6BQV39PiWAZVfq7oIckeGiN7sjRGyQxPdft3nQekFTCQbYxLBH+/axZMeH8UX6+w==
   dependencies:
     lru-cache "^7.5.1"
+
+hosted-git-info@^7.0.0:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-7.0.2.tgz#9b751acac097757667f30114607ef7b661ff4f17"
+  integrity sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==
+  dependencies:
+    lru-cache "^10.0.1"
 
 html-comment-regex@^1.1.0:
   version "1.1.2"
@@ -6421,6 +6428,11 @@ lpad-align@^1.1.0:
     longest "^1.0.0"
     meow "^3.3.0"
 
+lru-cache@^10.0.1:
+  version "10.2.2"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.2.tgz#48206bc114c1252940c41b25b41af5b545aca878"
+  integrity sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==
+
 lru-cache@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
@@ -7068,12 +7080,12 @@ normalize-package-data@^5.0.0:
     semver "^7.3.5"
     validate-npm-package-license "^3.0.4"
 
-normalize-package-data@~4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-4.0.1.tgz#b46b24e0616d06cadf9d5718b29b6d445a82a62c"
-  integrity sha512-EBk5QKKuocMJhB3BILuKhmaPjI8vNRSpIfO9woLC6NyHVkKKdVEdAO1mrT0ZfxNR1lKwCcTkuZfmGIFdizZ8Pg==
+normalize-package-data@~6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-6.0.1.tgz#fa69e9452210f0fabf4d79ee08d0c2870c51ed88"
+  integrity sha512-6rvCfeRW+OEZagAB4lMLSNuTNYZWLVtKccK79VSTf//yTY5VOCgcpH80O+bZK8Neps7pUnd5G+QlMg1yV/2iZQ==
   dependencies:
-    hosted-git-info "^5.0.0"
+    hosted-git-info "^7.0.0"
     is-core-module "^2.8.1"
     semver "^7.3.5"
     validate-npm-package-license "^3.0.4"
@@ -9430,10 +9442,10 @@ socks@^2.6.2:
     ip "^2.0.0"
     smart-buffer "^4.2.0"
 
-sort-keys-recursive@~2.1.7:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/sort-keys-recursive/-/sort-keys-recursive-2.1.8.tgz#f1af9c5beb56d5a325dc8382db0b341d03bdfd02"
-  integrity sha512-WsnhuSv6ls37VJgOLrImGI4/wleEhI8nmrOaggTVWtOsX40vs4/tGNarNT8ihYwUtbbzpY9LKKO/lNUckwPQjA==
+sort-keys-recursive@~2.1.10:
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/sort-keys-recursive/-/sort-keys-recursive-2.1.10.tgz#df5e22d3f3ff0427fdc4a088f16c37c1839456b8"
+  integrity sha512-yRLJbEER/PjU7hSRwXvP+NyXiORufu8rbSbp+3wFRuJZXoi/AhuKczbjuipqn7Le0SsTXK4VUeri2+Ni6WS8Hg==
   dependencies:
     kind-of "~6.0.2"
     sort-keys "~4.2.0"
