@@ -6697,10 +6697,10 @@ now-and-later@^3.0.0:
   dependencies:
     once "^1.4.0"
 
-npm-check-updates@^17.1.6:
-  version "17.1.6"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-17.1.6.tgz#b2a4d4bcb6222342b3c920c6fb7e17245ab9e45d"
-  integrity sha512-9I0b60plxMrOLuQT3W7f0Aq5FQSMeR1HWGXbkhq9xPTGyOPbS/Oz9wCy2aK6I2hu+vLRHMhU27ObDs1+oU3QfA==
+npm-check-updates@^17.1.8:
+  version "17.1.8"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-17.1.8.tgz#9fe65cc23b04086ba6680f7a8bf77201b06383df"
+  integrity sha512-oVPYIdl4NHyz6+TXWWko7c1+cqp7bm+D2fNPjIWQxWm+plJ7cyePc2WcXRKbfuVEnR2QtvBhL58rolkk/H687g==
 
 npm-run-path@^3.0.0:
   version "3.1.0"
