@@ -44,7 +44,7 @@
     "gulp-sass": "^6.0.0",
     "gulp-strip-css-comments": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "npm-check-updates": "^17.1.13",
     "prettier-standard": "^16.4.1",
     "sass": "^1.83.0",
