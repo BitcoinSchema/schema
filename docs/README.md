@@ -1,10 +1,10 @@
 ## What is Bitcoin Schema?
 
-The schemas are a set of 'types', each associated with a set of properties. This is a community driven register of types for standard use in applications. Schema.org provides a similar register, but this one is specifically designed with BitCoin enabled applications in mind, combining several data protocols.
+The schemas are a set of 'types', each associated with a set of properties. This is a community driven register of types for standard use in applications. [Schema.org](https://schema.org/) provides a similar register, but Bitcoin Schema is specifically designed with BitCoin enabled applications in mind, combining several data protocols.
 
 ## What protocols are used?
 
-The protocols used in the models registered here are currently [B](https://github.com/unwriter/b), [MAP](https://github.com/rohenaz/map), [AIP](https://github.com/attilaaf/AUTHOR_IDENTITY_PROTOCOL), [BAP](https://github.com/icellan/bap) and BPP
+The protocols used in the models registered here are currently [B](https://github.com/unwriter/b), [MAP](https://github.com/rohenaz/map), [AIP](https://github.com/attilaaf/AUTHOR_IDENTITY_PROTOCOL), [BAP](https://github.com/icellan/bap) and BPP.
 
 ## Why is Schema Important?
 
@@ -22,6 +22,6 @@ There are a number of tools available for both recording data types listed here 
 
 ## Who is using Bitcoin Schema?
 
-[Tonicpow](https://tonicpow.com), [Jamify](https://jamify.xyz), [BitChat](https://bitchat.allaboardbitcoin.com), [BitChat [Nitro]](https://bitchatnitro.com),[Hona](https://hona.app), [BlockPost](https://blockpost.network), [MetaLens](https://metalens.app), [Retrofeed](https://retrofeed.me), and many others. If you're using Bitcoin Schema in your application and would like to be listed here, contact us or submit a pull request [here](https://github.com/BitcoinSchema/schema)
+[Tonicpow](https://tonicpow.com), [Jamify](https://jamify.xyz), [BitChat](https://bitchat.allaboardbitcoin.com), [BitChat [Nitro]](https://bitchatnitro.com),[Hona](https://hona.app), [BlockPost](https://blockpost.network), [MetaLens](https://metalens.app), [Retrofeed](https://retrofeed.me), and many others. If you're using Bitcoin Schema in your application and would like to be listed here, contact us or submit a pull request [here](https://github.com/BitcoinSchema/schema).
 
 ?> _Note_: Currently Bitcoin Schema is made up of OP_RETURN based data protocols. In the future, we expect OP_PUSHDATA based protocols to emerge. As new standards are adopted, they will be incorporated into the models registered here, or new variants will be listed.

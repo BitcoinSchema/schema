@@ -5,7 +5,7 @@
 - Unlock Limitless Interoperability
 - Build Collaborative Networks
 
-[Learn More](#what-is-schema)
+[Learn More](#what-is-bitcoin-schema)
 [Browse Schemas](schemas.md)
 
 ![color](#ecfcff)
