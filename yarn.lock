@@ -4062,15 +4062,14 @@ gh-got@^7.0.0:
     got "^8.0.0"
     is-plain-obj "^1.1.0"
 
-git-authors-cli@^1.0.52:
-  version "1.0.52"
-  resolved "https://registry.yarnpkg.com/git-authors-cli/-/git-authors-cli-1.0.52.tgz#8a3d9e9899921f65fdf22e6da076035e149d16d3"
-  integrity sha512-8Q8r9nRKEgtFkAmAbc5ZPihTg1hxtca6KRzp86cVENGknKv9xuoEH3wvXlkoMvA5e6Egh4WCpb794Zv1QynbeA==
+git-authors-cli@^1.0.53:
+  version "1.0.53"
+  resolved "https://registry.yarnpkg.com/git-authors-cli/-/git-authors-cli-1.0.53.tgz#06e9997d9392c2662ec4fdcf4701580dd2c9b94e"
+  integrity sha512-Z+Sw2iCV+N5DcGg55aVoplkugd2iyUbq7aBJPpDCBm36rxjq0ToEQG+cTxm5LAkIPBjJdqie8fLj2tfFCF4RHQ==
   dependencies:
     email-regex "~4.0.0"
     json-future "~2.2.18"
     mri "~1.2.0"
-    picocolors "~1.0.0"
     tinyspawn "~1.2.2"
 
 git-raw-commits@2.0.0:
@@ -7210,7 +7209,7 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-picocolors@^1.0.0, picocolors@~1.0.0:
+picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
