@@ -3766,10 +3766,10 @@ fined@^2.0.0:
     object.pick "^1.3.0"
     parse-filepath "^1.0.2"
 
-finepack@^2.12.15:
-  version "2.12.15"
-  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.12.15.tgz#4aad7ad9776f1703cf0d9e37a01ee3f0e943ed65"
-  integrity sha512-9sUGsPmQph4UqmqTn2OKHrrGrsnUf5SuF31wQnkjOkEO6s+4HvlMj1hZcYAdCkMT2hsSbLNRnzMolGnOmPp5yw==
+finepack@^2.12.17:
+  version "2.12.17"
+  resolved "https://registry.yarnpkg.com/finepack/-/finepack-2.12.17.tgz#e5e28284c3145412ff7ec436d0d3b28cbec2599c"
+  integrity sha512-ltWEIQU6/UoydJriyb7ohtXsKECSH1afZCyPxvHL0OGFiG42jtonjeJVju2cBpgZPaed+eZp87GTBcFFR2pnzg==
   dependencies:
     acho "~4.0.6"
     acho-skin-cli "~2.0.1"
@@ -3780,7 +3780,7 @@ finepack@^2.12.15:
     jsonlint "~1.6.3"
     lodash.omit "~4.18.0"
     mri "~1.2.0"
-    normalize-package-data "~6.0.1"
+    normalize-package-data "~9.0.0"
     sort-keys-recursive "~2.1.10"
 
 flagged-respawn@^2.0.0:
@@ -4649,6 +4649,13 @@ homedir-polyfill@^1.0.1:
   dependencies:
     parse-passwd "^1.0.0"
 
+hosted-git-info@^10.1.0:
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-10.1.1.tgz#50d93ed3ab3b81002122814cd56d5595f550d32c"
+  integrity sha512-DeOnSPAvOndYKfw075gt8yZzQ7S2hNztw34zBTfhIzLhmBTswIBg5/y+pqu/VD5cYWm5goAFTusDmUEmKZ0PEQ==
+  dependencies:
+    lru-cache "^11.1.0"
+
 hosted-git-info@^2.1.4:
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
@@ -4660,13 +4667,6 @@ hosted-git-info@^3.0.6:
   integrity sha512-aXpmwoOhRBrw6X3j0h5RloK4x1OzsxMPyxqIHyNfSe2pypkVTZFpEiRoSipPEPlMrh0HW/XsjkJ5WgnCirpNUw==
   dependencies:
     lru-cache "^6.0.0"
-
-hosted-git-info@^7.0.0:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-7.0.2.tgz#9b751acac097757667f30114607ef7b661ff4f17"
-  integrity sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w==
-  dependencies:
-    lru-cache "^10.0.1"
 
 html-comment-regex@^1.1.0:
   version "1.1.2"
@@ -5058,7 +5058,7 @@ is-core-module@^2.2.0:
   dependencies:
     has "^1.0.3"
 
-is-core-module@^2.6.0, is-core-module@^2.8.1, is-core-module@^2.9.0:
+is-core-module@^2.6.0, is-core-module@^2.9.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.10.0.tgz#9012ede0a91c69587e647514e1d5277019e728ed"
   integrity sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==
@@ -6137,10 +6137,10 @@ lpad-align@^1.1.0:
     longest "^1.0.0"
     meow "^3.3.0"
 
-lru-cache@^10.0.1:
-  version "10.2.2"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.2.tgz#48206bc114c1252940c41b25b41af5b545aca878"
-  integrity sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==
+lru-cache@^11.1.0:
+  version "11.4.0"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-11.4.0.tgz#87a577bfa71f7c94dfd71692874b859d1ca41a28"
+  integrity sha512-W+R+kFL4HgVxONq2bhXPi3bGpzGe/yEhVOp233qw9wCRtgncJ15P3bC+e4zZMu4Cq7d+WAJjXGW0uUkifhcatA==
 
 lru-cache@^4.1.5:
   version "4.1.5"
@@ -6572,13 +6572,12 @@ normalize-package-data@^3.0.0:
     semver "^7.3.2"
     validate-npm-package-license "^3.0.1"
 
-normalize-package-data@~6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-6.0.1.tgz#fa69e9452210f0fabf4d79ee08d0c2870c51ed88"
-  integrity sha512-6rvCfeRW+OEZagAB4lMLSNuTNYZWLVtKccK79VSTf//yTY5VOCgcpH80O+bZK8Neps7pUnd5G+QlMg1yV/2iZQ==
+normalize-package-data@~9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-9.0.0.tgz#0839a53cf4aeee0f687bd47da9064fa4c71628b4"
+  integrity sha512-la34cHOCAT6itNOYCvPi40XP8r0y6OHuNkooOfnfFUHdgy5MBw665qq5xsuS02AEC7WPQvhwvb7E9PI1gipplw==
   dependencies:
-    hosted-git-info "^7.0.0"
-    is-core-module "^2.8.1"
+    hosted-git-info "^10.1.0"
     semver "^7.3.5"
     validate-npm-package-license "^3.0.4"
 
