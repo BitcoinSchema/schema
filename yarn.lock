@@ -6622,10 +6622,10 @@ now-and-later@^3.0.0:
   dependencies:
     once "^1.4.0"
 
-npm-check-updates@^22.2.1:
-  version "22.2.1"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-22.2.1.tgz#85c6bd05ef0918d2f77cdcc9989ef750ff4a1df5"
-  integrity sha512-mGdIJfhtg+q0BzhbOpbOL73zhMZlgBQMG4wnBwPMMD5k96028UCuV0753YeSYk9odoh7HWK6/cY69bWxT7o+yg==
+npm-check-updates@^22.2.2:
+  version "22.2.2"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-22.2.2.tgz#ce36d2208345b641f0e68a0e1b92d93c11870224"
+  integrity sha512-dgDPmR9FfONMrHdMKsPoYzb2NgR+NxlLGBi3nL/3yN3aFr8IKLyQJMBEMj4pKM5yuv9esV4nL5TX0TY2veliNw==
 
 npm-run-path@^3.0.0:
   version "3.1.0"
