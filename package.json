@@ -34,7 +34,7 @@
     "browser-sync": "^3.0.4",
     "concurrently": "^10.0.4",
     "conventional-github-releaser": "^3.1.5",
-    "docsify-cli": "^4.4.4",
+    "docsify-cli": "^5.0.0",
     "finepack": "^2.12.18",
     "git-authors-cli": "^1.0.53",
     "gulp": "^5.0.1",
