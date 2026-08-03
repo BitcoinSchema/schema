@@ -3963,10 +3963,10 @@ gh-got@^7.0.0:
     got "^8.0.0"
     is-plain-obj "^1.1.0"
 
-git-authors-cli@^1.0.53:
-  version "1.0.53"
-  resolved "https://registry.yarnpkg.com/git-authors-cli/-/git-authors-cli-1.0.53.tgz#06e9997d9392c2662ec4fdcf4701580dd2c9b94e"
-  integrity sha512-Z+Sw2iCV+N5DcGg55aVoplkugd2iyUbq7aBJPpDCBm36rxjq0ToEQG+cTxm5LAkIPBjJdqie8fLj2tfFCF4RHQ==
+git-authors-cli@^1.0.54:
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/git-authors-cli/-/git-authors-cli-1.0.54.tgz#c0f556f8cc4b18493d5d98514ade61730ac827fa"
+  integrity sha512-hyO2zXKS8TEQBWj0n1BtUagrCJJF1zRf1xTDRUdFKxbKoEb85LslpFEXL7OW24dBgu0PYEgMf9mjF941MwC/0g==
   dependencies:
     email-regex "~4.0.0"
     json-future "~2.2.18"
