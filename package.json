@@ -32,7 +32,7 @@
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "21.2.3",
     "browser-sync": "^3.0.4",
-    "concurrently": "^10.0.5",
+    "concurrently": "^10.0.6",
     "conventional-github-releaser": "^3.1.5",
     "docsify-cli": "^5.0.0",
     "finepack": "^2.12.20",
